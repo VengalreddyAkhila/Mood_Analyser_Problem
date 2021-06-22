@@ -13,15 +13,23 @@ namespace Mood_Analyser_Problem
         }
         /// <summary>
         /// parameterised constructor
-        /// checking the  mood sad or happy
+        /// checking the sadmood or happymood
+        /// using handle exceptions in uc2
         /// </summary>
         /// <returns></returns>
         public string  AnalyseMood()
         {
-            if (this.message.Contains("Sad"))
-                return "SAD";
-           
-                return "HAPPY";                    
+            try
+            {                
+                if (this.message.Contains("Sad"))
+                    return "SAD";
+
+                return "HAPPY";
+            }
+            catch(Exception)
+            {
+                return "HAPPY";
+            }           
         }
 
     }
