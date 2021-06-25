@@ -20,7 +20,11 @@ namespace Mood_Analyser_Problem
         public string  AnalyseMood()
         {
             try
-            {                
+            {
+                if (message == null || message == string.Empty)
+                {
+                    throw new Exception();
+                }
                 if (this.message.Contains("Sad"))
                     return "SAD";
 
@@ -28,7 +32,7 @@ namespace Mood_Analyser_Problem
             }
             catch(Exception)
             {
-                return "HAPPY";
+                return "Happy";
             }           
         }
 

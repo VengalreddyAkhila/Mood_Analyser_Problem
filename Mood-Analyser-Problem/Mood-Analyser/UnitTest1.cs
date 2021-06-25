@@ -13,7 +13,7 @@ namespace Mood_Analyser
         {
             string expected = "SAD";
             string message = "I am in Sad mood";
-            MoodAnalyser  moodAnalyser = new MoodAnalyser(message);
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
             //Act
             string mood = moodAnalyser.AnalyseMood();
             //Assert
@@ -25,6 +25,7 @@ namespace Mood_Analyser
         [Test]
         public void GivenHappyMoodShouldReturnHappy()
         {
+            //Arrange
             string expected = "HAPPY";
             string message = "I am in Happy mood";
             MoodAnalyser moodAnalyser = new MoodAnalyser(message);
@@ -36,18 +37,21 @@ namespace Mood_Analyser
         /// <summary>
         ///If the message is null it returns happymood 
         /// </summary>
-        [Test]       
+        [Test]
         public void GivenNullMoodShouldReturnHappy()
         {
+            //Arrange
             string expected = "HAPPY";
-            string message = "Null";
+            string message = "";
             MoodAnalyser moodAnalyser = new MoodAnalyser(message);
             //Act
             string mood = moodAnalyser.AnalyseMood();
             //Assert
             Assert.AreEqual(expected, mood);
         }
-
-
     }
 }
+            
+        
+
+
