@@ -14,7 +14,7 @@ namespace Mood_Analyser_Problem
         /// </summary>
         public enum ExceptionType
         {
-            NULL_MESSAGE,EMPTY_MESSAGE
+            NULL_MESSAGE,EMPTY_MESSAGE,NO_SUCH_CLASS,NO_SUCH_METHOD
         }
         //creating type variable of type exceptiontype
         private readonly ExceptionType type;
