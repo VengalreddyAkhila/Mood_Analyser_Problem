@@ -87,8 +87,35 @@ namespace Mood_Analyser
             object expected = new MoodAnalyser(message);
             object obj = MoodAnalyserFactory.CreateMoodAnalysis("moodanalyserclass.moodanalyser", "moodanalyser");
             expected.Equals(obj);
+            //Assert.AreEqual(expected, obj);
         }
-        
+        /// <summary>
+        /// Test case 4.2 gieven improper class name should throw exception
+        /// </summary>
+        [Test]
+        public void GivenImproperClassName_ShouldThrowexception()
+        {
+            string expected = "message not found";           
+            try
+            {               
+              object moodAnalyserObject = MoodAnalyserFactory.CreateMoodAnalysis("moodnanalyserproblem.moodanalyser", "moodanalyser");
+            }
+            catch(MoodAnalysisException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+        /// <summary>
+        /// Test case 5.1 Given mood analyser class name should return mood analyser object using parametrized constructor
+        /// </summary>
+        [Test]
+        public void GivenMoodAnalyserClassName_ShouldReturnModdAnalyserClassObject_UsingParameterizedConstructor()
+        {
+            object excpected = new MoodAnalyser("Happy");
+            object obj = MoodAnalyserFactory.ParameterizedConstructor("moodanalyserproblem.moodanalyser", "Happy");
+            excpected.Equals(obj);
+        }
+
     }
 }
             
